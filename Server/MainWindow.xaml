@@ -1,0 +1,30 @@
+﻿<Window x:Class="Server.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Server"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10,0,-10,0">
+        <DataGrid Name="Data" FrozenColumnCount="4" MouseDoubleClick="Select_Contract" Margin="0,0,244,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Number" Binding="{Binding Number, Mode=OneWay}"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date, Mode=OneWay}"/>
+                <DataGridTextColumn Header="LastUpdate" Binding="{Binding LastUpdate, Mode=OneWay}"/>
+                <DataGridCheckBoxColumn Header="Currentness" Binding="{Binding Currentness, Mode=OneWay}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Height="30px" Content="Create Connection" VerticalAlignment="Bottom" Margin="0,0,50,303" Click="Button_Click" Width="120" HorizontalAlignment="Right" />
+        <Button Width="120px" Content="Get All Contracts" HorizontalAlignment="Right" Margin="0,0,50,375" Click="GetAllContractsHandler" Height="30" VerticalAlignment="Bottom" />
+        <TextBox x:Name="Number" HorizontalAlignment="Right" Margin="0,0,50,221" TextWrapping="Wrap" Text="TextBox" Width="120" Height="18" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.556"/>
+        <TextBox x:Name="Date" HorizontalAlignment="Right" Margin="0,0,50,189" TextWrapping="Wrap" Text="TextBox" Width="120" Height="18" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.556"/>
+        <TextBox x:Name="LastUpdate" HorizontalAlignment="Right" Margin="0,0,50,157" TextWrapping="Wrap" Text="TextBox" Width="120" Height="18" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.556"/>
+        <Button Height="30px" Content="Update record" VerticalAlignment="Bottom" Margin="0,0,50,100" Click="UpdateRecord" HorizontalAlignment="Right" Width="120" />
+        <Label x:Name="Id" Content="Label" HorizontalAlignment="Right" Margin="0,0,91,244" VerticalAlignment="Bottom" Height="31"/>
+        <Button Height="30px" Content="Delete record" VerticalAlignment="Bottom" Margin="570,0,0,56" Click="DeleteRecord" HorizontalAlignment="Left" Width="120" />
+        <RadioButton x:Name="DeleteToggle" Content="Delete" HorizontalAlignment="Right" Margin="0,0,27,63" VerticalAlignment="Bottom" Click="ToggleDeleteState"/>
+        <Button Height="30px" Content="Add new record" VerticalAlignment="Bottom" Margin="0,0,50,10" HorizontalAlignment="Right" Width="120" Click="AddNewContract" />
+    </Grid>
+</Window>
